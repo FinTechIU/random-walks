@@ -1,0 +1,4 @@
+Problem Statement:
+A confused antelope is looking for food and each second takes a random step equally likely to be N, S, E, W. What is the probability that the antelope ever makes it back to where it started?
+
+2D Random Walk
