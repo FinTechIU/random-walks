@@ -1,12 +1,21 @@
 import random as rng
 import matplotlib.pyplot as plt
 
+while True:
+    try:
+        trials = int(input("Enter the number of trials per sample: "))
+        if trials <= 0:
+            print("Please enter a positive number")
+            continue
+        break
+    except ValueError:
+        print("Please enter a valid integer")
+
 triallst = []
 sample = 100
 
 for s in range(sample):
     successes = 0
-    trials = 1000
     
     for t in range(trials):
         x = 0
@@ -29,7 +38,7 @@ plt.figure(figsize=(10, 6))
 binwidth = 0.05
 plt.hist(triallst, bins=range(int(min(triallst)), int(max(triallst)) + 1, 1),
          edgecolor="yellow", color="brown")
-plt.title('Distribution of Success Rates')
+plt.title(f'Distribution of Success Rates ({trials} trials per sample)')
 plt.xlabel('Success Rate (%)')
 plt.ylabel('Frequency')
 plt.grid(True, alpha=0.3)
